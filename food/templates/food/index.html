@@ -1,23 +1,14 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>index</title>
-    <link rel="stylesheet" href="{% static 'food/style.css' %}">
-</head>
-<body>
-{% for item in item_list %}
+{% extends 'food/base.html' %}
 
-    <ul>
-        <li>
-            <a href="{% url 'food:detail' item.id %}">{{ item.id }} -- {{ item.item_name }}</a>
-        </li>
-    </ul>
+{% block body %}
 
-{% endfor %}
+    {% for item in item_list %}
 
-</body>
-</html>
+        <ul>
+            <li>
+                <a href="{% url 'food:detail' item.id %}">{{ item.id }} -- {{ item.item_name }}</a>
+            </li>
+        </ul>
+
+    {% endfor %}
+{% endblock %}
