@@ -16,10 +16,10 @@
 <body>
 
 <nav class="navbar navbar-light" style="background-color: mediumorchid; padding-left: 20px">
-    <a href="#" class="navbar-brand"> Food App </a>
+    <a href="{% url 'food:index' %}" class="navbar-brand"> Food App </a>
 
     <div class="navbar">
-        <a class="nav-item nav-link" style="padding-right: 30px" href="#"> Add Item </a>
+        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'food:create_item' %}"> Add Item </a>
         <a class="nav-item nav-link" style="padding-right: 30px" href="#"> Delete Item </a>
         <a class="nav-item nav-link" style="padding-right: 30px" href="#"> View Item </a>
     </div>
