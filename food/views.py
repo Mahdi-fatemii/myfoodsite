@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ItemForm
 from .models import Item
+from django.contrib.auth.decorators import login_required
 from django.template import loader
 # Create your views here.
 
@@ -27,6 +28,7 @@ def detail(request, item_id):
     return render(request, 'food/detail.html', context)
 
 
+@login_required
 def create_item(request):
     form = ItemForm(request.POST or None)
 
@@ -37,6 +39,7 @@ def create_item(request):
     return render(request, 'food/item-form.html', {'form': form})
 
 
+@login_required
 def update_item(request, id):
     item = Item.objects.get(id=id)
     form = ItemForm(request.POST or None, instance=item)
@@ -48,6 +51,7 @@ def update_item(request, id):
     return render(request, 'food/item-form.html', {'form': form, 'item': item})
 
 
+@login_required
 def delete_item(request, id):
     item = Item.objects.get(id=id)
 

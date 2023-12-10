@@ -19,9 +19,14 @@
     <a href="{% url 'food:index' %}" class="navbar-brand"> Food App </a>
 
     <div class="navbar">
-        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'food:create_item' %}"> Add Item </a>
-        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'register' %}"> Sign Up </a>
-        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'login' %}"> Log In </a>
+        {% if user.is_authenticated %}
+            <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'food:create_item' %}"> Add Item </a>
+            <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'profile' %}">Profile</a>
+            <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+            <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'login' %}">Log in</a>
+            <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'register' %}">Sign Up</a>
+        {% endif %}
     </div>
 </nav>
 
