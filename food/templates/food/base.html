@@ -20,14 +20,16 @@
 
     <div class="navbar">
         <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'food:create_item' %}"> Add Item </a>
+        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'register' %}"> Sign Up </a>
+        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'login' %}"> Log In </a>
     </div>
 </nav>
 
 {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-{{ message.tags }}">
-        {{ message }}
-    </div>
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
     {% endfor %}
 {% endif %}
 

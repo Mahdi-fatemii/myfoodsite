@@ -19,8 +19,9 @@
     <a href="{% url 'food:index' %}" class="navbar-brand"> Food App </a>
 
     <div class="navbar">
-        <a class="nav-item nav-link" style="padding-right: 30px" href="#"> Sign Up </a>
-        <a class="nav-item nav-link" style="padding-right: 30px" href="#"> Sign In </a>
+        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'register' %}"> Sign Up </a>
+        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'login' %}"> Log In </a>
+        <a class="nav-item nav-link" style="padding-right: 30px" href="{% url 'logout' %}"> Log Out </a>
     </div>
 </nav>
 
